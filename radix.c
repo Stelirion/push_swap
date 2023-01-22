@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 11:02:33 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/22 18:15:15 by ngennaro         ###   ########lyon.fr   */
+/*   Created: 2023/01/22 18:14:13 by ngennaro          #+#    #+#             */
+/*   Updated: 2023/01/22 18:39:49 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <signal.h>
-# include "libft/headers/libft.h"
-# include "libft/headers/ft_printf.h"
-# include "libft/headers/get_next_line_bonus.h"
+void	radix(t_list a)
+{
+	t_list	b;
 
-t_list	*parse_one(char *arg);
-t_list	*parse_multiple(char **arg);
-void	convert_index(t_list *list);
-void	check_double(t_list *list);
-void	radix(t_list a);
+}
+int main (void)
+ {
+	int i;
+	int j;
 
-#endif
+	j = 0;
+	i = 0;
+	while (i < 10)
+	{
+		i++;
+		printf("%i\n", i>>j&1);
+	}
+	i = 0;
+	j = 1;
+	printf ("\n\n");
+	while (i < 10)
+	{
+		i++;
+		printf("%i\n", i>>j&10);
+	}
+}
