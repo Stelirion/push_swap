@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 13:22:12 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/22 17:08:56 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/01/22 17:54:30 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,6 @@ size_t	ft_pwr(int i, int pwr);
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+t_list	*ft_lstnew_pos(int content);
 
 #endif

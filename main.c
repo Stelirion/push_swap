@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 02:54:22 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/22 17:44:49 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/01/22 17:55:10 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int	main(int argc, char **argv)
 		list = parse_multiple(argv);
 	check_double(list);
 	convert_index(list);
+	ft_lstadd_back (&list, ft_lstnew_pos(-1));
 	ft_printlist_index(list);
 }
