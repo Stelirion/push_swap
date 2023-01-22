@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 13:22:12 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/22 03:44:07 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/01/22 17:08:56 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list
 {
 	int				content;
+	int				pos;
 	struct s_list	*next;
 }	t_list;
 
