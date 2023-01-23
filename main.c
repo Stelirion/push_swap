@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 02:54:22 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/22 18:13:59 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/01/23 17:42:55 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int	main(int argc, char **argv)
 		list = parse_one(argv[1]);
 	if (argc > 2)
 		list = parse_multiple(argv);
-	check_double(&list);
-	convert_index(&list);
-	size = lst_size(&list);
+	check_double(list);
+	convert_index(list);
+	size = lst_size(list);
 	ft_lstadd_back (&list, ft_lstnew_pos(-1));
-	ft_printlist_index(&list);
-	if (size > 5)
-		radix(&list);
+	ft_printlist_index(list);
+	//if (size > 5)
+	//	radix(&list);
 }
