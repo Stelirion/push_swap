@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   instruction.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/22 18:14:13 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/25 15:22:44 by ngennaro         ###   ########lyon.fr   */
+/*   Created: 2023/01/25 13:24:19 by ngennaro          #+#    #+#             */
+/*   Updated: 2023/01/25 15:17:16 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	radix(t_list *a)
+void	pa(t_list *a, t_list *b)
 {
-	t_list	*b;
+	t_list	*temp;
 
-	pb(a, b);
-	ft_printf("a\n");
-	ft_printlist_index(a);
-	ft_printf("b\n");
-	ft_printlist_index(b);
+	if (b->pos != -1)
+		ft_printf("pa\n");
+	temp = b;
+	b = b->next;
+	temp->next = a;
+	a = temp;
 }
 
-//int main (void)
-// {
-//	int i;
-//	int j;
-//
-//	j = 0;
-//	i = 0;
-//	while (i < 10)
-//	{
-//		i++;
-//		printf("%i\n", i>>j&1);
-//	}
-//	i = 0;
-//	j = 1;
-//	printf ("\n\n");
-//	while (i < 10)
-//	{
-//		i++;
-//		printf("%i\n", i>>j&10);
-//	}
-//}
+void	pb(t_list *a, t_list *b)
+{
+	t_list	*temp;
+
+	if (a->pos != -1)
+		ft_printf("pb\n");
+	temp = a;
+	a = a->next;
+	temp->next = b;
+	b = temp;
+}

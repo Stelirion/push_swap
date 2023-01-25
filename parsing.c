@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:02:11 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/22 17:44:58 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/01/25 14:48:50 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,10 @@ t_list	*parse_multiple(char **arg)
 		}
 		if (!list)
 		{
-			list = ft_lstnew(ft_atoi(arg[i])); //free
+			list = ft_lstnew(ft_atoi(arg[i]));
 		}
 		else
-			ft_lstadd_back (&list, ft_lstnew(ft_atoi(arg[i]))); //free
+			ft_lstadd_back (&list, ft_lstnew(ft_atoi(arg[i])));
 		i++;
 	}
 	return (list);
