@@ -20,7 +20,7 @@ DIR_LIBFT	=	libft/
 
 HEAD	=	push_swap.h
 
-SRCS	=	main.c parsing.c radix.c
+SRCS	=	main.c parsing.c radix.c instruction.c sort_2.c
 
 OBJS	=	${SRCS:%.c=${DIR_OBJS}%.o}
 
@@ -41,7 +41,7 @@ all		:	${NAME}
 # ---- Variables Rules ---- #
 
 ${NAME}	:	${OBJS} ${addprefix ${DIR_LIBFT}, ${LIBFT}}
-			${CC} ${CFLAGS} -o ${NAME} ${OBJS} -L${DIR_LIBFT}
+			${CC} ${CFLAGS} -o ${NAME} ${OBJS} -L ${DIR_LIBFT}
 
 ${addprefix ${DIR_LIBFT}, ${LIBFT}}	:
 			make ${LIBFT} -C ${DIR_LIBFT}
