@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 11:02:33 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/26 06:21:02 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/01/26 09:10:42 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ void	ra(t_list **a);
 void	sa(t_list **a);
 int		is_sort(t_list	*stack);
 void	sort_2(t_list **list);
-void	sort_3(t_list **list);
+void	sort_3(t_list *list);
 
 #endif

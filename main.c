@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 02:54:22 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/26 06:18:08 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/01/26 09:11:53 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int argc, char **argv)
 	if (size == 2)
 		sort_2(&list);
 	if (size == 3)
-		sort_2(&list);
+		sort_3(list);
 	if (size > 5)
 		radix(&list);
 }
