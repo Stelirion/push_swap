@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:02:11 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 06:14:47 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 07:33:03 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,7 @@ t_list	*parse_one(char *arg)
 		while (tab[i][j])
 		{
 			if (!ft_isdigit(tab[i][j]) && tab[i][j] != '-')
-			{
-				free_tabs(tab);
-				ft_printf("Error\n");
-				exit (0);
-			}
+				return (free_tabs(tab), ft_printf("Error\n"), exit (0), list);
 			j++;
 		}
 		if (!list)
@@ -73,10 +69,7 @@ t_list	*parse_multiple(char **arg)
 		while (arg[i][j])
 		{
 			if (!ft_isdigit(arg[i][j]) && arg[i][j] != '-')
-			{
-				ft_printf("Error\n");
-				exit (0);
-			}
+				return (ft_printf("Error\n"), exit (0), list);
 			j++;
 		}
 		if (!list)

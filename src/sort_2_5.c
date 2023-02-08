@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 06:11:55 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 06:32:32 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 07:16:09 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,25 @@ void	sort_4(t_list **list)
 
 void	sort_5(t_list **list)
 {
-	while ((*list)->pos != 0)
-		ra(list);
-	write(1, "pb\n", 3);
-	while ((*list)->pos != 1)
-		ra(list);
-	write(1, "pb\n", 3);
-	convert_index((*list)->next);
-	sort_3((*list)->next);
-	write(1, "pa\n", 3);
-	write(1, "pa\n", 3);
-	(void) list;
+	int		i;
+	t_list	*b;
+
+	b = ft_lstnew_pos(-1);
+	i = 0;
+	while (i < 2)
+	{
+		if ((*list)->pos == 0 || (*list)->pos == 1)
+		{
+			pb(list, &b);
+			i++;
+		}
+		else
+			ra(list);
+	}
+	if (b->pos == 0)
+		ft_printf("sb\n");
+	convert_index(*list);
+	sort_3(*list);
+	ft_printf("pa\npa\n");
+	ft_lstfree(b);
 }

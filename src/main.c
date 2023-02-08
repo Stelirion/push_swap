@@ -6,20 +6,11 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 02:54:22 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 06:16:13 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 07:29:58 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
-
-void	ft_printlist_index(t_list *i)
-{
-	while (i)
-	{
-		ft_printf("%i\n", i->pos);
-		i = i->next;
-	}
-}
 
 size_t	lst_size(t_list *list)
 {
@@ -34,6 +25,18 @@ size_t	lst_size(t_list *list)
 	return (i);
 }
 
+int	is_sort_total(t_list	*stack)
+{
+	while (stack->next)
+	{
+		if (stack->content < stack->next->content)
+			stack = stack->next;
+		else
+			return (0);
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*list;
@@ -46,10 +49,7 @@ int	main(int argc, char **argv)
 	check_double(list);
 	convert_index(list);
 	if (is_sort_total (list))
-	{
-		ft_lstfree (list);
-		exit (0);
-	}
+		return (ft_lstfree (list), exit(0), 0);
 	size = lst_size(list);
 	if (size == 2)
 		sort_2(&list);

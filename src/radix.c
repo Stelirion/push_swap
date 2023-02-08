@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 18:14:13 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 06:16:45 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 07:29:49 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,6 @@ int	is_sort(t_list	*stack)
 	return (1);
 }
 
-int	is_sort_total(t_list	*stack)
-{
-	while (stack->next)
-	{
-		if (stack->content < stack->next->content)
-			stack = stack->next;
-		else
-			return (0);
-	}
-	return (1);
-}
-
 int	is_sort_end(t_list	*stack)
 {
 	int	i;
@@ -81,8 +69,8 @@ void	radix(t_list **a)
 
 	ft_lstadd_back (a, ft_lstnew_pos(-1));
 	b = ft_lstnew_pos(-1);
-	i = 0;
 	size = stack_size(*a);
+	i = 0;
 	while (!is_sort(*a))
 	{
 		j = 0;
