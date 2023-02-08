@@ -96,3 +96,4 @@ void	radix(t_list **a)
 	}
 	ft_lstfree(b);
 }
+
