@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_2_3.c                                         :+:      :+:    :+:   */
+/*   sort_2_5.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 06:11:55 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 05:02:06 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 06:32:32 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
-
-
-
-void	ft_printlist_index2(t_list *i)
-{
-	while (i)
-	{
-		ft_printf("%i\n", i->pos);
-		i = i->next;
-	}
-}
-
 
 void	sort_2(t_list **list)
 {

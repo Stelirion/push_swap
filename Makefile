@@ -7,7 +7,7 @@ SRCS =  ./src/instruction.c \
 ./src/main.c \
 ./src/parsing.c \
 ./src/radix.c \
-./src/sort_2_3.c
+./src/sort_2_5.c
 		
 #./src/main/debug.c
 
@@ -17,7 +17,7 @@ HEAD = ./headers/
 
 # ---- Compiled Rules ---- #
 
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 %.o: %.c ${HEAD} 
 	${CC} ${CFLAGS} -c $< -o $@ -I ${HEAD}

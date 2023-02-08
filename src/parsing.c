@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:02:11 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 05:20:00 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 06:14:47 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ t_list	*parse_one(char *arg)
 			j++;
 		}
 		if (!list)
-			list = ft_lstnew(ft_atoi(tab[i])); //free
+			list = ft_lstnew(ft_atoi(tab[i]));
 		else
-			ft_lstadd_back (&list, ft_lstnew(ft_atoi(tab[i]))); //free
+			ft_lstadd_back (&list, ft_lstnew(ft_atoi(tab[i])));
 		i++;
 	}
 	free_tabs(tab);

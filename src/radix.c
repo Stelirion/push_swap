@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 18:14:13 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 05:13:40 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 06:16:45 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	is_sort_total(t_list	*stack)
 		if (stack->content < stack->next->content)
 			stack = stack->next;
 		else
-			return(0);
+			return (0);
 	}
 	return (1);
 }

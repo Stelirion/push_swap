@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 13:22:12 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 04:12:48 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 06:14:12 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew_pos(int content);
 void	ft_lstfree(t_list *lst);
-int	is_sort_total(t_list	*stack);
+int		is_sort_total(t_list	*stack);
 
 #endif
