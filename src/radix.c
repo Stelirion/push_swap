@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 18:14:13 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 07:29:49 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 08:04:30 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,25 @@ int	is_sort_end(t_list	*stack)
 	return (1);
 }
 
+void	bit_shift(int size, t_list **a, t_list **b, int i)
+{
+	int		j;
+
+	j = 0;
+	while (j < size && is_sort_end(*a) == 0)
+	{
+		if (((*a)->pos >> i) % 2 == 1)
+			ra(a);
+		else
+			pb(a, b);
+		j++;
+	}
+}
+
 void	radix(t_list **a)
 {
 	t_list	*b;
 	int		i;
-	int		j;
 	int		size;
 
 	ft_lstadd_back (a, ft_lstnew_pos(-1));
@@ -73,15 +87,7 @@ void	radix(t_list **a)
 	i = 0;
 	while (!is_sort(*a))
 	{
-		j = 0;
-		while (j < size && is_sort_end(*a) == 0)
-		{
-			if (((*a)->pos >> i) % 2 == 1)
-				ra(a);
-			else
-				pb(a, &b);
-			j++;
-		}
+		bit_shift (size, a, &b, i);
 		if (is_sort_end(*a) == 0)
 			ra(a);
 		while (b->pos != -1)
