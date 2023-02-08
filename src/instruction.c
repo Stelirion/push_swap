@@ -6,11 +6,11 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 13:24:19 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/26 06:07:56 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 04:46:47 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 void	sa(t_list **a)
 {

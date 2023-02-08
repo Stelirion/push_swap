@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 16:27:41 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 02:50:40 by ngennaro         ###   ########lyon.fr   */
+/*   Created: 2023/02/08 02:29:56 by ngennaro          #+#    #+#             */
+/*   Updated: 2023/02/08 03:53:51 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_lstfree(t_list *lst)
 {
-	size_t	i;
-	char	*str;
+	t_list	*next;
 
-	i = 0;
-	str = (char *)b;
-	while (i < len)
+	while (lst)
 	{
-		str[i] = (char)c;
-		i++;
+		next = lst->next;
+		free(lst);
+		lst = next;
 	}
-	return (b);
 }

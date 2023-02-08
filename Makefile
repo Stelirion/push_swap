@@ -17,7 +17,7 @@ HEAD = ./headers/
 
 # ---- Compiled Rules ---- #
 
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 %.o: %.c ${HEAD} 
 	${CC} ${CFLAGS} -c $< -o $@ -I ${HEAD}

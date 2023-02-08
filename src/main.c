@@ -6,11 +6,11 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 02:54:22 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/26 09:11:53 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 04:52:42 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 void	ft_printlist_index(t_list *i)
 {
@@ -45,12 +45,22 @@ int	main(int argc, char **argv)
 		list = parse_multiple(argv);
 	check_double(list);
 	convert_index(list);
+	if(is_sort_total(list))
+	{
+		ft_lstfree (list);
+		exit (0);
+	}
 	size = lst_size(list);
-	ft_lstadd_back (&list, ft_lstnew_pos(-1));
 	if (size == 2)
 		sort_2(&list);
-	if (size == 3)
+	else if (size == 3)
 		sort_3(list);
-	if (size > 5)
+	else if (size == 4)
+		sort_4(&list);
+	else if (size == 5)
+		sort_5(&list);
+	else if (size > 5)
 		radix(&list);
+	//ra(&list);
+	ft_lstfree(list);
 }

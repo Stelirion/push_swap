@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:50:47 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/22 16:53:21 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 05:33:18 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,7 @@ int	ft_atoi(const char *str)
 	res = 0;
 	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-			k = -1;
+		k = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -34,5 +33,7 @@ int	ft_atoi(const char *str)
 		res = res * 10 + ((str[i] - '0') * k);
 		i++;
 	}
+	if (str[i])
+		return (write(1, "Error\n", 6), exit (0), 1);
 	return (res);
 }

@@ -6,7 +6,7 @@
 #    By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 13:23:24 by ngennaro          #+#    #+#              #
-#    Updated: 2023/01/22 03:44:54 by ngennaro         ###   ########lyon.fr    #
+#    Updated: 2023/02/08 02:45:26 by ngennaro         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ ft_binary.c \
 ft_lstlast.c \
 ft_lstnew.c \
 ft_lstadd_back.c \
+ft_lstfree.c
 
 DIR_SRCS = src/
 

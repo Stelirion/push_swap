@@ -6,11 +6,11 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 18:14:13 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/26 08:28:51 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 05:13:40 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 int	stack_size(t_list *stack)
 {
@@ -36,6 +36,18 @@ int	is_sort(t_list	*stack)
 			return (0);
 		stack = stack->next;
 		i++;
+	}
+	return (1);
+}
+
+int	is_sort_total(t_list	*stack)
+{
+	while (stack->next)
+	{
+		if (stack->content < stack->next->content)
+			stack = stack->next;
+		else
+			return(0);
 	}
 	return (1);
 }
@@ -67,6 +79,7 @@ void	radix(t_list **a)
 	int		j;
 	int		size;
 
+	ft_lstadd_back (a, ft_lstnew_pos(-1));
 	b = ft_lstnew_pos(-1);
 	i = 0;
 	size = stack_size(*a);
@@ -87,4 +100,5 @@ void	radix(t_list **a)
 			pa(a, &b);
 		i++;
 	}
+	ft_lstfree(b);
 }

@@ -6,11 +6,11 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:02:11 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/01/26 08:35:14 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 05:20:00 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../headers/push_swap.h"
 
 int	free_tabs(char **tab)
 {
@@ -74,7 +74,6 @@ t_list	*parse_multiple(char **arg)
 		{
 			if (!ft_isdigit(arg[i][j]) && arg[i][j] != '-')
 			{
-				free_tabs(arg);
 				ft_printf("Error\n");
 				exit (0);
 			}
