@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 02:54:22 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 07:29:58 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 18:53:31 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	main(int argc, char **argv)
 	t_list	*list;
 	size_t	size;
 
+	if (argc == 1)
+		return (0);
 	if (argc == 2)
 		list = parse_one(argv[1]);
 	if (argc > 2)

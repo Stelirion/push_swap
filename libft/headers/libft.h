@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 13:22:12 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 06:14:12 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 19:09:33 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr( const void *src, int c, size_t size );
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *to_find, size_t size);
-int		ft_atoi(const char *str);
+int		ft_atoi(const char *str, t_list *list, char **tab);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *src);
 char	*ft_substr(char const *s, unsigned int start, size_t len);

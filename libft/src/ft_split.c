@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:51:43 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 17:26:41 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 18:46:45 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	**ft_split(char const *s, char c)
 			size = word_len(size, c, &i, s);
 			tab[words] = ft_substr(s, (i - size), size);
 			if (!tab[words++])
-				return (free_all(tab, words));
+				return (free_all(tab, words), exit(0), NULL);
 		}
 	}
 	tab[words] = NULL;

@@ -19,7 +19,7 @@ HEAD = ./headers/
 
 CFLAGS = -Wall -Wextra -Werror
 
-%.o: %.c ${HEAD} 
+%.o: %.c ${HEAD} headers/push_swap.h
 	${CC} ${CFLAGS} -c $< -o $@ -I ${HEAD}
 
 
