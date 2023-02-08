@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 17:51:43 by ngennaro          #+#    #+#             */
-/*   Updated: 2022/12/16 13:14:14 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 17:26:41 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	words = 0;
 	tab = setup_tab(s, c);
 	if (!tab)
-		return (NULL);
+		return (exit(0), NULL);
 	while (s[i])
 	{
 		if (s[i] == c)

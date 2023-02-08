@@ -6,7 +6,7 @@
 /*   By: ngennaro <ngennaro@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 17:02:11 by ngennaro          #+#    #+#             */
-/*   Updated: 2023/02/08 07:33:03 by ngennaro         ###   ########lyon.fr   */
+/*   Updated: 2023/02/08 17:48:40 by ngennaro         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	free_tabs(char **tab)
 t_list	*parse_one(char *arg)
 {
 	t_list	*list;
+	t_list	*new;
 	char	**tab;
 	int		i;
 	int		j;
@@ -45,10 +46,10 @@ t_list	*parse_one(char *arg)
 				return (free_tabs(tab), ft_printf("Error\n"), exit (0), list);
 			j++;
 		}
-		if (!list)
-			list = ft_lstnew(ft_atoi(tab[i]));
-		else
-			ft_lstadd_back (&list, ft_lstnew(ft_atoi(tab[i])));
+		new = ft_lstnew(ft_atoi(tab[i]));
+		if (!new)
+			return(ft_lstfree(list), exit(0), list);
+		ft_lstadd_back (&list, new);
 		i++;
 	}
 	free_tabs(tab);
@@ -58,6 +59,7 @@ t_list	*parse_one(char *arg)
 t_list	*parse_multiple(char **arg)
 {
 	t_list	*list;
+	t_list	*new;
 	int		i;
 	int		j;
 
@@ -72,12 +74,10 @@ t_list	*parse_multiple(char **arg)
 				return (ft_printf("Error\n"), exit (0), list);
 			j++;
 		}
-		if (!list)
-		{
-			list = ft_lstnew(ft_atoi(arg[i]));
-		}
-		else
-			ft_lstadd_back (&list, ft_lstnew(ft_atoi(arg[i])));
+		new = ft_lstnew(ft_atoi(arg[i]));
+		if (!new)
+			return(ft_lstfree(list), exit(0), list);
+		ft_lstadd_back (&list, new);
 		i++;
 	}
 	return (list);
