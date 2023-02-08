@@ -1,67 +1,43 @@
-.PHONY:	all clean fclean re fclean_lib fclean_all
+#---- Final executable ---- #
 
-# ******** VARIABLES ******** #
+NAME = push_swap
 
-# ---- Final Executable --- #
+#---- Directories ----#
+SRCS =  ./src/instruction.c \
+./src/main.c \
+./src/parsing.c \
+./src/radix.c \
+./src/sort_2_3.c
+		
+#./src/main/debug.c
 
-NAME		=	push_swap
+OBJS = ${SRCS:.c=.o}
 
-LIBFT		=	libft.a
-
-# ---- Directories ---- #
-
-DIR_OBJS	=	.objs/
-
-DIR_SRCS	=	./
-
-DIR_LIBFT	=	libft/
-
-# ---- Files ---- #
-
-HEAD	=	push_swap.h
-
-SRCS	=	main.c parsing.c radix.c instruction.c sort_2.c
-
-OBJS	=	${SRCS:%.c=${DIR_OBJS}%.o}
-
-# ---- Compilation ---- #
-
-CC		=	cc
-CFLAGS	=	-Wall -Wextra -Werror
-
-# ---- Commands ---- #
-
-RM		=	rm -rf
-MKDIR	=	mkdir -p
-
-# ********* RULES ******** #
-
-all		:	${NAME}
-
-# ---- Variables Rules ---- #
-
-${NAME}	:	${OBJS} ${addprefix ${DIR_LIBFT}, ${LIBFT}}
-			${CC} ${CFLAGS} -o ${NAME} ${OBJS} -L ${DIR_LIBFT}
-
-${addprefix ${DIR_LIBFT}, ${LIBFT}}	:
-			make ${LIBFT} -C ${DIR_LIBFT}
+HEAD = ./headers/
 
 # ---- Compiled Rules ---- #
 
-${DIR_OBJS}%.o	:	${DIR_SRCS}%.c push_swap.h ./libft/headers/ft_printf.h ./libft/headers/get_next_line_bonus.h ./libft/headers/libft.h | ${DIR_OBJS}
-					${CC} ${CFLAGS} -I ${addprefix ${DIR_LIBFT}, headers/}
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
-${DIR_OBJS}		:
-					${MKDIR} ${DIR_OBJS}
+%.o: %.c ${HEAD} 
+	${CC} ${CFLAGS} -c $< -o $@ -I ${HEAD}
 
+
+${NAME}:	${OBJS}
+			make -C ./libft
+			$(CC) ${CFLAGS} ${OBJS} ./libft/libft.a -o ${NAME}
+			
 # ---- Usual Commands ---- #
+all:	${NAME}
 
-clean			:
-					${RM} ${DIR_OBJS}
+clean:
+		${RM} ${OBJS}
 
-fclean			:	clean
-					${RM} ${NAME}
-					make fclean -C ${DIR_LIBFT}
+fclean:	clean
+		make fclean -C ./libft
+		${RM} ${NAME}
 
-re				:	fclean
-					${MAKE} all
+re:		fclean
+		$(MAKE) all
+
+.PHONY:	all clean fclean re

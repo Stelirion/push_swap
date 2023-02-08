@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../headers/get_next_line_bonus.h"
+#include <stdio.h>
 
 char	*buffer_parse(char *buffer, size_t index)
 {
@@ -70,10 +71,10 @@ char	*get_line(char *line, char *buffer, int fd)
 
 char	*get_next_line(int fd)
 {
-	static char	buffer[OPEN_MAX][BUFFER_SIZE + 1];
+	static char	buffer[FOPEN_MAX][BUFFER_SIZE + 1];
 	char		*line;
 
-	if (fd < 0 || fd >= OPEN_MAX)
+	if (fd < 0 || fd >= FOPEN_MAX)
 		return (NULL);
 	line = malloc(sizeof(char));
 	if (!line)

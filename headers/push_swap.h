@@ -15,9 +15,9 @@
 
 # include <unistd.h>
 # include <signal.h>
-# include "libft/headers/libft.h"
-# include "libft/headers/ft_printf.h"
-# include "libft/headers/get_next_line_bonus.h"
+# include "../libft/headers/libft.h"
+# include "../libft/headers/ft_printf.h"
+# include "../libft/headers/get_next_line_bonus.h"
 
 t_list	*parse_one(char *arg);
 t_list	*parse_multiple(char **arg);

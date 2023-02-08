@@ -62,7 +62,7 @@ DIR_SRCS = src/
 
 DIR_OBJS = .objs/
 
-DIR_HEAD = headers/
+DIR_HEAD = ./headers/
 
 OBJS	=	${SRCS:%.c=${DIR_OBJS}%.o}
 
